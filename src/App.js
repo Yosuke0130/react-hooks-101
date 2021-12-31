@@ -1,8 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const App = props => {
   const [state, setState] = useState(props)
   const { name, price } = state
+
+  useEffect(() => {
+    console.log("This is like componentDidMont or comopnentDidUpdate")
+  })
+
+  useEffect(() => {
+    console.log("This is like componentDidMont")
+  }, [])
+
+  useEffect(() => {
+    console.log("This callback is for name only")
+  }, [name])
+
   return (
     <>
       <p>現在の{name}は、{price}です。</p>
