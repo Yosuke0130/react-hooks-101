@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import reducer from '../reducers'
 
 const App = () => {
-  const { state, dispatch } = useReducer(reducer, [])
+  const [ state, dispatch ] = useReducer(reducer, [])
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
 
@@ -19,9 +19,9 @@ const App = () => {
 
     setTitle('')
     setBody('')
+    console.log({state})
   }
 
-  console.log({state})
 
   return (
     <div className="comtainer-fluid">
