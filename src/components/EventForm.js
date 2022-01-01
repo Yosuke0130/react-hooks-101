@@ -9,6 +9,7 @@ const EventForm = () => {
   const [body, setBody] = useState('')
   const addEvent = e => {
     e.preventDefault()
+    console.log('hello')
     dispatch({
       type: CREATE_EVENT,
       title,
@@ -42,7 +43,7 @@ const EventForm = () => {
             </div>
     
             <button className="btn btn-primary" onClick={addEvent} disabled={unCreatable}>イベントを作成する</button>
-            <button className="btn btn-danger" onClick={deleteAllEvents} disabled={state.length === 0}>全てのイベントを削除する</button>
+            <button className="btn btn-danger" onClick={deleteAllEvents} disabled={state.events.length === 0}>全てのイベントを削除する</button>
             </form>
         </>
     )
